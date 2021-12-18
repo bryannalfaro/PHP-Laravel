@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Empleado;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class EmpleadoController extends Controller
 {
@@ -16,7 +17,7 @@ class EmpleadoController extends Controller
     {
         //
         $datos = Empleado::get();
-        return '<h1>Listado de Empleados</h1>' . $datos;
+        return view('welcome', compact('datos'));
     }
 
     /**
